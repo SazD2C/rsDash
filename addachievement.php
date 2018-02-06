@@ -4,6 +4,7 @@
   <title>
     Add achievement
   </title>
+  <link rel="stylesheet" type="text/css" href="addachv.css"/>
   <?php
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
@@ -27,38 +28,6 @@
 
   mysqli_close($connection);
   ?>
-  <style>
-  submit {
-    border: 0px;
-    background-color: white;
-  }
-  input {
-    border: 0px;
-  }
-#textarea {
-  width: 400px;
-  height: 100px;
-  border: 0px
-}
-html, body {
-background-color: #282C35;
-color: white;
-margin: 0px;
-}
-.title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 30px;
-  text-align: center;
-}
-#submit {
-    padding: 10px;
-    border-radius: 2px;
-}
-#return {
-  text-decoration: none;
-  color: #C4C4C4;
-}
-  </style>
 </head>
 <body>
   <br /><br /><br />

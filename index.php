@@ -1,52 +1,31 @@
+<!DOCTYPE HTML>
+<head>
+<link rel="stylesheet" type="text/css" href="search.css"/>
+<title>
+  RS search
+</title>
+</head>
+<body>
+
+  <ul>
+    <li><a href="">Home</a></li>
+    <li><a href="">Achievements</a></li>
+    <li><a href="">User list generator</a></li>
+    <li><a href="">Add new</a></li>
+    <li><a href="">About</a></li>
+    <li style="float:right"><a href="">Contact</a></li>
+  </ul>
+
+
+<center>
+  <img src="rs.png" id="logo" alt="RS Logo" title="RS user dashboard"/><br />
+  <form action="search.php" method="post">
+    <input type="text" name="search" id="bug">
+    <input type="submit" name="submit" value="search" id="rat">
+  </form>
+</center>
 <?php
-
-$connection = @mysqli_connect("localhost","root","","RS")
-OR die('Could not connect' .
-      mysqli_connect_error());
-
-$query = "SELECT usrid, username, art FROM userinfo";
-$response = @mysqli_query($connection,$query);
-
-if($response){
-
-echo '<table align="left"
-cellspacing="5" cellpadding="8">
-
-<tr><td align="left"><b>ID</b></td>
-<td align="left"><b>Art Affinity</b></td>
-<td align="left"><b>Username</b></td>';
-
-while($row = mysqli_fetch_array($response)){
-
-echo '<tr><td align="left">' .
-$row['usrid'] . '</td><td align="left">' .
-$row['art'] . '</td><td align="left">' .
-$row['username'] . '</td><td align="left">';
-
-echo '</tr>';
-}
-
-echo '</table>';
-
-} else {
-
-echo "Couldn't issue database query<br />";
-
-echo mysqli_error($connection);
-
-}
-
-
-
-
-mysqli_close($connection);
-
+require_once('phpsearchcode.php');
 ?>
-
-<style>
-html,body {
-  background-colofont-family: 'Roboto', sans-serif;r: #282C35;
-  color: white;
-}
-
-</style>
+</body>
+</html>

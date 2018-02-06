@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <head>
+  <!-- List all achievements of specific user -->
 <?php  $usrid = $_GET['usrid'];
 $connection = @mysqli_connect("localhost","root","","RS")
 OR die('Could not connect' .

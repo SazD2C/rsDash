@@ -117,13 +117,13 @@ echo "<p> Year joined: " . $joindate . "</p>";
 
   </tr>
 </table>
-<p><a href="search.php" style="bottom: 0px; color: white; text-decoration: none;"> Return </a> </p>
+<p><a href="index.php" style="bottom: 0px; color: white; text-decoration: none;"> Return </a> </p>
 </div>
 
 <div id="profileBody">
   <span class="summaryTab">User summary</span>&nbsp;<span class="summaryTab" id="contactInfo">Contact Info</span><br /><br /><br />
 <span class="title" id="addNewAchv"> Recent Op Achievements</span> <span id="newAchvLink"> <?php echo "<a id='addNewLink' href='addachievement.php?usrid=" . $userid . "'> Add new</a>"; ?></span>
-<br /> <?php echo "<p class='achvtitle'>" . $achvtitle . "</p>"; echo $achvdescr;?><br /><br /> <?php echo "<a id='seeAll' href='allachv.php?usrid=" . $userid . "'>See all</a>"; ?>  <hr />
+<br /> <?php echo "<p class='achvtitle'>" . $achvtitle . "</p>"; echo $achvdescr;?><br /><br /> <?php echo "<a id='seeAll' href='usrallachv.php?usrid=" . $userid . "'>See all</a>"; ?>  <hr />
 
   <br /><br /><br /><br />
   <span id="eskills">Enumerated skills: </span>
