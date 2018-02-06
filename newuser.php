@@ -2,7 +2,7 @@
 <head>
   <!-- Change this page so new users may be created -->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="addachv.css"/>
+  <link rel="stylesheet" type="text/css" href="css/newuser.css"/>
   <title>
     Add achievement
   </title>

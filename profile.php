@@ -2,7 +2,7 @@
 <?php   $user=$_GET['user']; ?>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="search.css">
+  <link rel="stylesheet" type="text/css" href="css/profile.css">
   <title>
     <?php echo $user; ?>s Profile
   </title>

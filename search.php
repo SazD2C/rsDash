@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-<link rel="stylesheet" type="text/css" href="search.css"/>
+<link rel="stylesheet" type="text/css" href="css/search.css"/>
 <title>
   RS search
 </title>

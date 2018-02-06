@@ -4,7 +4,7 @@
   <title>
     Add achievement
   </title>
-  <link rel="stylesheet" type="text/css" href="addachv.css"/>
+  <link rel="stylesheet" type="text/css" href="css/addachv.css"/>
   <?php
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
