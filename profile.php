@@ -2,80 +2,10 @@
 <?php   $user=$_GET['user']; ?>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="search.css">
   <title>
     <?php echo $user; ?>s Profile
   </title>
-  <style>
-  html,body {
-    background-color: #282C35;
-    color: white;
-    margin: 0px;
-  }
-
-  #profileSidebar {
-    text-align: center;
-    background-color: #3c4049;
-    width: 250px;
-    padding: 20px;
-    height: 100%;
-    display: inline-block;
-    height: 100%;
-  }
-  #username {
-    font-size: 30px;
-  }
-  #profileBody {
-    background-color: #3c4049;
-    display: inline-block;
-    width: 1000px;
-    height: 100%;
-    padding-top: 160px;
-  }
-
-p {
-  text-align: left;
-}
-#eskills {
-  font-family: 'Roboto', sans-serif;
-  font-size: 30px;
-  top: 30px;
-  position: relative;
-}
-#skillwrapper {
-  top: 50px;
-  position: relative;
-}
-.title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 30px;
-}
-.achvtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-}
-
-#addNewAchv:hover + #newAchvLink {
-  opacity: 1;
-}
-#newAchvLink {
-  transition: opacity 3s ease-out;
-  opacity: 0;
-}
-#addNewLink {
-  text-decoration: none;
-  color: #C4C4C4;
-}
-#seeAll {
-  text-decoration: none;
-  color: #C4C4C4;
-}
-.summaryTab {
-  padding: 10px;
-  border-radius: 2px;
-  background-color: black;
-  width: 100px;
-}
-  </style>
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
