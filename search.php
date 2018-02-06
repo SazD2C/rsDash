@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-<?php
-require_once('phpsearchcode.php');
-?>
+
 <style>
 .results {
   position: relative;
@@ -51,8 +49,9 @@ input {
 }
 
 
-
-
+html,body {
+margin: 0px;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -77,23 +76,23 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
-.active {
-    background-color: #D7432E;
-}
 </style>
 <title>
   RS search
 </title>
 </head>
 <body>
+
   <ul>
-   <li class="active"><a href="">Home</a></li>
-   <li><a href="">Add New</a></li>
-   <li><a href="">Latest Achievements</a></li>
-   <li><a href="">User list generator</a></li>
-   <li><a href="">About</a></li>
-   <li style="float:right"><a href="">Contact</a></li>
- </ul>
+    <li><a href="">Home</a></li>
+    <li><a href="">Achievements</a></li>
+    <li><a href="">User list generator</a></li>
+    <li><a href="">Add new</a></li>
+    <li><a href="">About</a></li>
+    <li style="float:right"><a href="">Contact</a></li>
+  </ul>
+
+
 <center>
   <img src="rs.png" id="logo" alt="RS Logo" title="RS user dashboard"/><br />
   <form action="search.php" method="post">
@@ -101,6 +100,8 @@ li a:hover:not(.active) {
     <input type="submit" name="submit" value="search" id="rat">
   </form>
 </center>
-
+<?php
+require_once('phpsearchcode.php');
+?>
 </body>
 </html>
