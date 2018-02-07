@@ -4,10 +4,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/newuser.css"/>
   <title>
-    Add achievement
+    New user
   </title>
   <?php
-  $usrid=$_GET['usrid'];
   $connection = @mysqli_connect("localhost","root","","RS");
   if($connection->connect_error){
       die("Connection failed: " . $connection->connect_error);
@@ -20,7 +19,6 @@
   $languages = $_POST['languages'];
   $oldname = $_POST['oldname'];
   $hunting = $_POST['hunting'];
-  $hunting = $_POST['hunting'];
   $frontwebdev = $_POST['frontwebdev'];
   $backwebdev = $_POST['backwebdev'];
   $writing = $_POST['writing'];
@@ -32,6 +30,52 @@
   $timezone = $_POST['timezone'];
   $availability = $_POST['availability'];
   $reliability = $_POST['reliability'];
+  if ($age == 0 or $age == '')  {
+    $age = NULL;
+  }
+  if ($oldname == '')  {
+    $age = NULL;
+  }
+  if ($hunting == 0 or $hunting == '')  {
+    $hunting = NULL;
+  }
+  if ($frontwebdev == 0 or $frontwebdev == '')  {
+    $frontwebdev = NULL;
+  }
+  if ($writing == 0 or $writing == '')  {
+    $writing = NULL;
+  }
+  if ($frontwebdev == 0 or $frontwebdev == '')  {
+    $frontwebdev = NULL;
+  }
+  if ($programming == 0 or $programming == '')  {
+    $programming = NULL;
+  }
+  if ($frontwebdev == 0 or $frontwebdev == '')  {
+    $frontwebdev = NULL;
+  }
+  if ($art == 0 or $art == '')  {
+    $art = NULL;
+  }
+  if ($se == 0 or $se == '')  {
+    $se = NULL;
+  }
+  if ($smm == 0 or $smm == '')  {
+    $smm = NULL;
+  }
+  if ($pentesting == 0 or $pentesting == '')  {
+    $pentesting = NULL;
+  }
+  if ($timezone == 0 or $timezone == '')  {
+    $timezone = NULL;
+  }
+  if ($availability == 0 or $availability == '')  {
+    $availability = NULL;
+  }
+  if ($reliability == 0 or $reliability == '')  {
+    $reliability = NULL;
+  }
+
   $sql = "INSERT INTO `userinfo` (`username`, `joindate`, `age`, `languages`, `oldname`, `hunting`, `frontwebdev`, `backwebdev`, `writing`, `programming`, `art`, `se`, `smm`, `pentesting`, `timezone`, `availability`, `reliability`) VALUES ;";
   mysqli_query($connection,$sql);
   }
