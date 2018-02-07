@@ -1,3 +1,31 @@
+<!-- Non functional
+
+Attempt to create xml file search that will allow users to easily find data they
+can organize user data from. (ex. hunting, se, art)
+
+Pass that to a php variable, and echo data organized ASC by that.
+Must only be for numeric columns, exclude others.
+
+-->
+
+
+
+
+
+<!DOCTYPE HTML>
+<head>
+<title>
+  User List Generator
+</title>
+</head>
+<body>
+  <form action="usrlist.php" method="post">
+    <input type="text" name="search" id="bug">
+    <input type="submit" name="submit" value="search" id="rat">
+  </form>
+  <?php
+  require_once('phpusrlistrsearch.php');
+  ?>
 <?php
 
 $connection = @mysqli_connect("localhost","root","","RS")
@@ -36,9 +64,7 @@ echo mysqli_error($connection);
 
 }
 
-
-
-
 mysqli_close($connection);
-
 ?>
+</body>
+</html>

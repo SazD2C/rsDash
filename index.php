@@ -10,7 +10,7 @@
   <ul>
     <li><a href="">Home</a></li>
     <li><a href="">Achievements</a></li>
-    <li><a href="">User list generator</a></li>
+    <li><a href="usrlister.php">User list generator</a></li>
     <li><a href="">Add new</a></li>
     <li><a href="">About</a></li>
     <li style="float:right"><a href="">Contact</a></li>
@@ -19,11 +19,12 @@
 
 <center>
   <img src="rs.png" id="logo" alt="RS Logo" title="RS user dashboard"/><br />
-  <form action="search.php" method="post">
+  <form action="index.php" method="post">
     <input type="text" name="search" id="bug">
     <input type="submit" name="submit" value="search" id="rat">
   </form>
 </center>
+
 <?php
 require_once('phpsearchcode.php');
 ?>
