@@ -5,11 +5,6 @@ submit {
 input {
   border: 0px;
 }
-#textarea {
-width: 400px;
-height: 100px;
-border: 0px
-}
 html, body {
 background-color: #282C35;
 color: white;
@@ -27,4 +22,12 @@ text-align: center;
 #return {
 text-decoration: none;
 color: #C4C4C4;
+}
+tr {
+  text-align: center;
+  right: 50%;
+}
+table {
+  text-align: center;
+  right: 50%;
 }
