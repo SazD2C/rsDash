@@ -24,7 +24,7 @@ Must only be for numeric columns, exclude others.
     <input type="submit" name="submit" value="search" id="rat">
   </form>
   <?php
-  require_once('phpusrlistrsearch.php');
+  require_once('php/phpusrlistrsearch.php');
   ?>
 <?php
 

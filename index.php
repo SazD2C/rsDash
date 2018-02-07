@@ -26,7 +26,7 @@
 </center>
 
 <?php
-require_once('phpsearchcode.php');
+require_once('php/phpsearchcode.php');
 ?>
 </body>
 </html>
