@@ -1,3 +1,5 @@
+<!-- Try Using code from userlister.php here to see if it works -->
+
 <!DOCTYPE HTML>
 <head>
   <!-- List all achievements of specific user -->
