@@ -76,7 +76,7 @@
     $reliability = NULL;
   }
 
-  $sql = "INSERT INTO `userinfo` (`username`, `joindate`, `age`, `languages`, `oldname`, `hunting`, `frontwebdev`, `backwebdev`, `writing`, `programming`, `art`, `se`, `smm`, `pentesting`, `timezone`, `availability`, `reliability`) VALUES ('" . $username . "', '" . $joindate . "', '" . $age . "', '" . $languages . "', '" . $oldname . "', '" . $hunting . "', '" . $frontwebdev . "', '" . $backwebdev . "', '" . $writing . "', '" . $programming . "', '" . $art . "', '" . $se . "', '" . $smm . "', '" . $pentesting . "', '" . $timezone . "', '" . $availability . "', '" . $reliability . "';" ;
+  $sql = "INSERT INTO userinfo (username, joindate, age, languages, oldname, hunting, frontwebdev, backwebdev, writing, programming, art, se, smm, pentesting, timezone, availability, reliability) VALUES ('" . $username . "', '" . $joindate . "', '" . $age . "', '" . $languages . "', '" . $oldname . "', '" . $hunting . "', '" . $frontwebdev . "', '" . $backwebdev . "', '" . $writing . "', '" . $programming . "', '" . $art . "', '" . $se . "', '" . $smm . "', '" . $pentesting . "', '" . $timezone . "', '" . $availability . "', '" . $reliability . "';";
   mysqli_query($connection,$sql);
   }
   mysqli_close($connection);
