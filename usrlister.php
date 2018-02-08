@@ -1,4 +1,6 @@
-<!-- Non functional
+<!-- Non functional:
+
+Search function is broken
 
 Attempt to create xml file search that will allow users to easily find data they
 can organize user data from. (ex. hunting, se, art)
