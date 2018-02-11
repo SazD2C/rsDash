@@ -1,12 +1,11 @@
 .results {
-  position: relative;
+
   background-color: #36393E;
-  width: 30%;
+  width: 300px;
   text-align: center !important;
   padding-bottom: 30px;
   padding-top: 10px;
-  height: 100%;
-  transform: translate(125%,630%);
+transform: translate(-0%,480%);
 }
 a {
   text-decoration: none;

@@ -39,10 +39,11 @@ function load() {
     <input type="text" name="search" id="bug">
     <input type="submit" name="submit" value="search" id="rat">
   </form>
+  <?php
+  require_once('php/phpsearchcode.php');
+  ?>
 </center>
 
-<?php
-require_once('php/phpsearchcode.php');
-?>
+
 </body>
 </html>
