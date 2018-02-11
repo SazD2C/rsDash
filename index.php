@@ -25,7 +25,7 @@ function load() {
     <li><a href="">Home</a></li>
     <li><a href="">Achievements</a></li>
     <li><a href="usrlister.php">User list generator</a></li>
-    <li><a href="newuser.php">Add new user</a></li>
+    <li><a href="adduser.php">Add new user</a></li>
     <li ><a href="#" onclick="load(); return false;">Settings</a></li>
     <li><a href="">About</a></li>
     <li style="float:right"><a href="">Contact</a></li>
