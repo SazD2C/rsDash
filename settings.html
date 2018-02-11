@@ -1,10 +1,23 @@
 <link rel="stylesheet" type="text/css" href="css/settings.css"/>
+<!-- The following jQuery is non functional -->
+<script>
+function return() {
+    $("#logo").css("display", "visible");
+    $("#searchRes").css("display", "visible");
+    $(".results").show();
+    $("#nav").show();
+    $("#searchbar").show();
+    $("#red").hide();
+}
+</script>
 <div id="red">
 <ul>
   <li><a href="#home">Main - <span class="light">  Usercount, stats and other information </span></a></li>
   <li><a href="#">Skills - <span class="light"> Add or remove more user skills </span></a></li>
   <li><a href="#">Settings - <span class="light"> rsChat settings </span></a></li>
   <li><a href="#">About - <span class="light"> About rsDash </span></a></li>
+  <br />
+  <li><a href="#" onclick="return(); return false;">Exit</a></li>
 </ul>
 <div id="mainSettingsContent">
 <br />

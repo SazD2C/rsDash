@@ -28,7 +28,7 @@ function load() {
     <li><a href="adduser.php">Add new user</a></li>
     <li ><a href="#" onclick="load(); return false;">Settings</a></li>
     <li><a href="">About</a></li>
-    <li style="float:right"><a href="">Contact</a></li>
+    <li style="float:right"><a href="mailto:saz@cerberusbyte.com">Contact</a></li>
   </ul>
 
 <div id="paste"></div>
