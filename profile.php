@@ -52,7 +52,6 @@ if($picture === NULL) {
 echo "<img src='logopic.png' alt='default logo'/>";
 } else {
   echo "<img src='" . $picture . "' alt='profile picture'/>";
-  echo "fish";
 }
  ?> </span> <br />
 <span id="username"> <?php echo $user; ?> </span><br /><br />
