@@ -47,6 +47,7 @@ input {
 html,body {
 margin: 0px;
 height: 100%;
+overflow-x: hidden;
 }
 ul {
     list-style-type: none;
