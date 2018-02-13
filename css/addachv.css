@@ -14,6 +14,7 @@ html, body {
 background-color: #282C35;
 color: white;
 margin: 0px;
+overflow-x: hidden;
 }
 .title {
 font-family: 'Roboto', sans-serif;

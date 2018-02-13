@@ -30,7 +30,7 @@ OR die('Could not connect' .
 $query = "SELECT max(usrid), sum(art), sum(hunting), sum(frontwebdev), sum(writing), sum(programming), sum(se), sum(smm), sum(pentesting), sum(availability), sum(reliability) FROM userinfo ";
 $response = @mysqli_query($connection,$query);
 
-$achvquery = "SELECT max(achieveid) FROM achievements WHERE MONTH(timestamps) = MONTH(CURRENT_DATE())";
+$achvquery = "SELECT COUNT(achieveid) FROM achievements WHERE MONTH(timestamps) = MONTH(CURRENT_DATE())";
 $achvresponse = @mysqli_query($connection,$achvquery);
 $achv = @mysqli_fetch_array($achvresponse);
 $row = @mysqli_fetch_array($response);
@@ -41,7 +41,7 @@ $websum = $row['sum(frontwebdev)'];
 $writsum = $row['sum(writing)'];
 $progsum = $row['sum(programming)'];
 $sesum = $row['sum(se)'];
-$achvnum = $achv['max(achieveid)'];
+$achvnum = $achv['COUNT(achieveid)'];
 $smmsum = $row['sum(smm)'];
 $pensum = $row['sum(pentesting)'];
 $avsum = $row['sum(availability)'];

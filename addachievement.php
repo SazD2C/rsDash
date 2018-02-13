@@ -1,6 +1,7 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>
     Add achievement
   </title>
@@ -32,11 +33,16 @@
 <body>
   <br /><br /><br />
 <p class="title"> Add Achievement</p>
+<div class="row">
+  <div class="col-xs-6 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
 <form method="post" style="text-align: center;">
-  <input type="text" name="achievementname" style="width: 400px; padding: 3px;" placeholder="Name"><br /><br />
-  <textarea type="text" name="descr" id="textarea" placeholder="Description"></textarea><br /><br />
+  <input type="text"  class="form-control" name="achievementname" style="width: 400px; padding: 3px;" placeholder="Name"><br />
+  <textarea class="form-control" type="text" name="descr" id="textarea" placeholder="Description"></textarea><br /><br />
   <input type="submit" name="submit" value="Submit" id="submit"/>
 </form>
-<?php echo "<a id='return' href='profile.php?user=" . $retusername . "'> Return </a>"; ?>
+</div>
+<div class="col-xs-6 col-md-4"></div></div>
+<?php echo "<a id='return' style='margin-left:2px;' href='profile.php?user=" . $retusername . "'> Return </a>"; ?>
 </body>
 </html>

@@ -9,6 +9,7 @@ html, body {
 background-color: #282C35;
 color: white;
 margin: 0px;
+overflow-x: hidden;
 }
 .title {
 font-family: 'Roboto', sans-serif;
@@ -22,12 +23,4 @@ text-align: center;
 #return {
 text-decoration: none;
 color: #C4C4C4;
-}
-tr {
-  text-align: center;
-  right: 50%;
-}
-table {
-  text-align: center;
-  right: 50%;
 }

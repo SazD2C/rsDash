@@ -1,6 +1,7 @@
 <html>
 <head>
   <!-- Change this page so new users may be created -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/newuser.css"/>
   <title>
@@ -89,62 +90,66 @@
 <body>
   <br /><br /><br />
 <p class="title"> Add a user</p>
-<form method="post" style="text-align: center;">
-<table>
-<tr>
-  <td>Username</td><td><input type="text" name="username" style="width: 400px; padding: 3px;" placeholder="Required"><br /><br /><td>
-</tr>
-  <td>Join year</td><td><input type="text" name="joindate" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-<tr>
-  <td>Age</td><td><input type="text" name="age" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Languages</td><td><input type="text" name="languages" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Old Name</td><td><input type="text" name="oldname" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Hunting skill</td><td><input type="text" name="hunting" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Front web dev skill</td><td><input type="text" name="frontwebdev" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Back web dev skill</td><td><input type="text" name="backwebdev" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Writing</td><td><input type="text" name="writing" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Programming</td><td><input type="text" name="programming" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Art</td><td><input type="text" name="art" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Social Engineering</td><td><input type="text" name="se" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Social Media Management</td><td><input type="text" name="smm" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Pen Testing</td><td><input type="text" name="pentesting" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Timezone</td><td><input type="text" name="timezone" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-<tr>
-  <td>Availability</td><td><input type="text" name="availability" style="width: 400px; padding: 3px;" placeholder="Required"><br /><br />
-</tr>
-<tr>
-  <td>Reliability</td><td><input type="text" name="reliability" style="width: 400px; padding: 3px;" placeholder="Required"><br /><br />
-</tr>
-<tr>
-  <td>Url to avatar</td><td><input type="text" name="avatar" style="width: 400px; padding: 3px;" placeholder="Optional"><br /><br />
-</tr>
-</table>
-  <input type="submit" name="submit" value="Submit" id="submit"/>
+<form method="post" style="text-align: center;" class="form-group">
+
+<div class="row">
+  <div class="col-xs-6 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
+   Username  <input type="text" class="form-control" name="username" style="width: 400px; padding: 3px;" placeholder="Required">
+
+   Join year  <input type="text" class="form-control" name="joindate" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+   Age  <input type="text" class="form-control" name="age" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Languages  <input type="text" class="form-control" class="form-control" name="languages" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Old Name  <input type="text" class="form-control" name="oldname" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Hunting skill  <input type="text" class="form-control" name="hunting" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Front web dev skill  <input type="text" class="form-control" name="frontwebdev" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Back web dev skill  <input type="text" class="form-control" name="backwebdev" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Writing  <input type="text" class="form-control" name="writing" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Programming  <input type="text" class="form-control" name="programming" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Art  <input type="text" class="form-control" name="art" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Social Engineering  <input type="text" class="form-control" name="se" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Social Media Management  <input type="text" class="form-control" name="smm" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Pen Testing  <input type="text" class="form-control" name="pentesting" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Timezone  <input type="text" class="form-control" name="timezone" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+   Availability  <input type="text" class="form-control" name="availability" style="width: 400px; padding: 3px;" placeholder="Required">
+
+
+   Reliability  <input type="text" class="form-control" name="reliability" style="width: 400px; padding: 3px;" placeholder="Required">
+
+
+   Url to avatar  <input type="text" class="form-control" name="avatar" style="width: 400px; padding: 3px;" placeholder="Optional">
+
+
+  <input type="submit" name="submit" class="form-control" style="width:100px;" value="Submit" id="submit"/>
+  </div>
+    <div class="col-xs-6 col-md-4"></div></div>
 </form>
 </body>
 </html>
