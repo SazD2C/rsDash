@@ -20,9 +20,8 @@
   border-radius: 1px;
   display: inline-block;
 }
-
 </style>
-
+<link rel="stylesheet" type="text/css" href="css/ms.css"/>
 <?php $connection = @mysqli_connect("localhost","root","","RS")
 OR die('Could not connect' .
       mysqli_connect_error());
