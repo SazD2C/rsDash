@@ -140,158 +140,150 @@ echo "<p> Year joined: " . $joindate . "</p>";
   <span id="eskills">Enumerated skills: </span>
   <span id="skillwrapper">
     <div class="row">
-      <div class="col-md-2">
-      <td> <?php
+
+   <?php
       if($hunter === NULL) {
 
       } else {
-        echo "Hunting";
+        echo "<div class='col-md-2'>Hunting</div>";
       }
       ?>
-    </div>
-    <div class="col-md-2">
+
        <?php
       if($webdev === NULL) {
 
       } else {
-        echo "Web Dev";
+        echo "<div class='col-md-2'>Web Dev</div>";
       }
       ?>
-    </div>
-    <div class="col-md-2">
+
        <?php
       if($programming === NULL) {
 
       } else {
-        echo "Programming";
+        echo "<div class='col-md-2'>Programming</div>";
       }
       ?>
-    </div>
-    <div class="col-md-2"> <?php
+
+ <?php
       if($se === NULL) {
 
       } else {
-        echo "Social Engineering";
+        echo "<div class='col-md-2'>Social Engineering</div>";
       }
-      ?>     </div>
-          <div class="col-md-2"> <?php
+      ?>
+       <?php
       if($art === NULL) {
 
       } else {
-        echo "Art";
+        echo "<div class='col-md-2'>Art</div>";
       }
-      ?>    </div>
-          <div class="col-md-2"> <?php
+      ?>
+       <?php
       if($writing === NULL) {
 
       } else {
-        echo "Writing";
+        echo "<div class='col-md-2'>Writing</div>";
       }
-      ?>     </div>
-          <div class="col-md-2"><?php
+      ?>
+      <?php
       if($smm === NULL) {
 
       } else {
-        echo "Social Media Management";
+        echo "<div class='col-md-2'>Social Media Management</div>";
       }
       ?>    </div>
     </div>
     <div class="row">
-        <div class="col-md-2">
+
 
   <?php
   if($hunter === NULL) {
 
   } elseif ($hunter >= 4) {
-      echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $hunter . "</div>";
+      echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $hunter . "</div></div>";
     } elseif ($hunter < 4 && $hunter > 2) {
-      echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032; color: black; float: left;'>" . $hunter . "</div>";
+      echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032; color: black; float: left;'>" . $hunter . "</div></div>";
     } else {
-      echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E; '>" . $hunter . "</div>";
+      echo "<div class='col-md-2'><div style='display:block; text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E; '>" . $hunter . "</div></div>";
     }
 
-  ?> </div>
-  <div class="col-md-2">
+  ?>
 <?php
 if($webdev === NULL) {
 
 
 } elseif ($webdev >= 4) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $webdev . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $webdev . "</div></div>";
 } elseif ($webdev < 4 && $webdev > 2) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black; float: left;'>" . $webdev . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black; float: left;'>" . $webdev . "</div></div>";
 } else {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $webdev . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $webdev . "</div></div>";
 }
 
-?> </div>
-<div class="col-md-2">
+?>
 <?php
 if($webdev === NULL) {
 
 
 } elseif ($programming >= 4) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $programming . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $programming . "</div></div>";
 } elseif ($programming < 4 && $programming > 2) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $programming . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $programming . "</div></div>";
 } else {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $programming . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $programming . "</div></div>";
 }
 
-?> </div>
-<div class="col-md-2">
+?>
 <?php
 if($se === NULL) {
 
 
 } elseif ($se >= 4) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $se . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $se . "</div></div>";
 } elseif ($se < 4 && $se > 2) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $se . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $se . "</div></div>";
 } else {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $se . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $se . "</div></div>";
 }
 
-?> </div>
-<div class="col-md-2">
+?>
 <?php
 if($art === NULL) {
 
 
 } elseif ($art >= 4) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $art . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $art . "</div></div>";
 } elseif ($art < 4 && $art > 2) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $art . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $art . "</div></div>";
 } else {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $art . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $art . "</div></div>";
 }
 
-?> </div>
-<div class="col-md-2">
+?>
 <?php
 if($writing === NULL) {
 
 
 } elseif ($writing >= 4) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $writing . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $writing . "</div></div>";
 } elseif ($writing < 4 && $writing > 2) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $writing . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $writing . "</div></div>";
 } else {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $writing . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $writing . "</div></div>";
 }
 
-?> </div>
-<div class="col-md-2">
+?>
 <?php
 if($smm === NULL) {
 
 
 } elseif ($smm >= 4) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $smm . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $smm . "</div></div>";
 } elseif ($smm < 4 && $smm > 2) {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $smm . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #C0E032;  color: black;'>" . $smm . "</div></div>";
 } else {
-  echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $smm . "</div>";
+  echo "<div class='col-md-2'><div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $smm . "</div></div>";
 }
 
 ?> </div>
