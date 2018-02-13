@@ -1,10 +1,10 @@
 <style>
-  html, body {
+html, body {
     overflow-x:hidden;
     width: 100%;
     margin:0px;
-  }
-  #bar{
+}
+#bar {
   width:100% !important;
   height:50% !important;
 }
