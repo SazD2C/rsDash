@@ -8,7 +8,7 @@
 html, body {
   margin:0px;
   color: white;
-  background-color: #282C35;
+  background-color: #282C35 !important;
 }
 .achvwrap {
   background-color: #36393E;
@@ -21,6 +21,7 @@ html, body {
 <title>
 All Achievements
 </title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
@@ -38,10 +39,11 @@ All Achievements
 
   while($row = mysqli_fetch_array($response)){
 
-  echo '<div class="achvwrap"><span class="title">' . $row['achievementname'] . '</span>- <span class="timestamp">' .
-  $row['date(timestamps)'] . '</span> <br />' .
+  echo '<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading" style="display:inline;"><span class="title">' . $row['achievementname'] . '</span></h4>- <span class="timestamp">' .
+  $row['date(timestamps)'] . '</span> <hr /><p class="mb-0">' .
 
-  $row['achievementdescr'] . '</div>';
+  $row['achievementdescr'] . '</p></div>';
 
   echo '<br />';
   }
