@@ -25,21 +25,14 @@ input {
 #rat {
   background-color: white !important;
   border: 0px;
-
-  top: 50%;
-  right:30%;
   padding: 20px;
 }
 #bug {
   border: 0px;
   background-color: white;
-
-  top: 50%;
   padding: 20px;
   width:300px;
 }
-
-
 html,body {
   margin: 0px;
   height: 100%;
