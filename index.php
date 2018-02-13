@@ -13,7 +13,7 @@
   crossorigin="anonymous"></script>
 <script>
 function load() {
-    $("#paste").load("settings.html");
+    $("#paste").load("settings.php");
     $("#logo").css("display", "none");
     $("#searchRes").css("display", "none");
     $(".results").hide();

@@ -1,5 +1,9 @@
 <link rel="stylesheet" type="text/css" href="css/settings.css"/>
 <!-- The following jQuery is non functional -->
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
 <script>
 function return() {
     $("#logo").css("display", "visible");
@@ -10,9 +14,6 @@ function return() {
     $("#red").hide();
 }
 
-function load() {
-    $("#mainSettingsContent").load("settings.html");
-  }
 </script>
 <div id="red">
 <ul>
@@ -23,8 +24,5 @@ function load() {
   <br />
   <li><a href="" onclick="return(); return false;">Exit</a></li>
 </ul>
-<div id="mainSettingsContent">
-<br />
-  Test
-</div>
+<div id="mainSettingsContent">  <iframe src="settings/mainSettingsSandbox.php" width="100%" height="100%"  frameBorder="0" class="frame"></iframe></div>
 </div>
