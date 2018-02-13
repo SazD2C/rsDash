@@ -5,7 +5,7 @@ if (empty($user_name)) $user_name = '';
     if($connection->connect_error){//show error if connection failed
         die("Connection failed: " . $connection->connect_error);
     }
-    $sql="SELECT username FROM userinfo WHERE username LIKE '%" . $_POST['search'] . "%';";
+    $sql="SELECT username, usrid FROM userinfo WHERE username LIKE '%" . $_POST['search'] . "%';";
     $res=$connection->query($sql);
     while($row=$res->fetch_assoc()){
         echo "<div class='results'><p> Username: <a href='profile.php?user=" . $row['username'] . "'> " . $row['username'] . "</a></p></div>";
