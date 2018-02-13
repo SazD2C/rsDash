@@ -71,7 +71,7 @@ echo "<div style='display:inline;'><span style='width:" . $artsump . "%; backgro
 <?php echo "<script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
+
     type: 'bar',
 
     // The data for our dataset
@@ -85,7 +85,7 @@ var chart = new Chart(ctx, {
         }]
     },
 
-    // Configuration options go here
+
     options: {
       responsive:true,
       maintainAspectRatio: false
