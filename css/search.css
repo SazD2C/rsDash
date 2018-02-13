@@ -1,11 +1,10 @@
 .results {
-
   background-color: #36393E;
-  width: 300px;
+  width: 100%;
   text-align: center !important;
   padding-bottom: 30px;
   padding-top: 10px;
-transform: translate(-0%,480%);
+
 }
 a {
   text-decoration: none;
@@ -16,7 +15,7 @@ a {
   right: 33%;
 }
 html,body {
-  background-color: #282C35;
+  background-color: #282C35 !important;
   color: white;
   margin: 0px;
 }
@@ -26,7 +25,7 @@ input {
 #rat {
   background-color: white !important;
   border: 0px;
-  transform: translate(-50%,-50%);
+
   top: 50%;
   right:30%;
   padding: 20px;
@@ -34,10 +33,10 @@ input {
 #bug {
   border: 0px;
   background-color: white;
-  transform: translate(-50%,-50%);
+
   top: 50%;
   padding: 20px;
-  width:350px;
+  width:300px;
 }
 
 

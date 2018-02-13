@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/search.css"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
@@ -33,19 +34,22 @@ function load() {
   </ul>
 
 <div id="paste"></div>
-<center>
-
-  <img src="rs.png" id="logo" alt="RS Logo" title="RS user dashboard"/><br />
+<br /><br /><br /><br /><br /><br />
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+  <img src="rs.png" id="logo" alt="RS Logo" title="RS user dashboard"/><br /><br /><br />
   <form action="index.php" method="post" id="searchbar">
     <input type="text" name="search" id="bug">
     <input type="submit" name="submit" value="search" id="rat">
   </form>
-
-
   <?php
   require_once('php/phpsearchcode.php');
   ?>
-</center>
+</div>
+  <div class="col-md-4"></div>
+</div>
+
 
 
 </body>
