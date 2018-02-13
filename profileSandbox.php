@@ -1,5 +1,5 @@
 <html>
-<?php   $user=$_GET['user']; ?>
+<?php  $userid=$_GET['userid']; ?>
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -25,8 +25,8 @@
   OR die('Could not connect' .
         mysqli_connect_error());
 
-  $query = "SELECT usrid, username, oldname, languages, joindate, art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE username='" . $user . "';";
-  $response = @mysqli_query($connection,$query);
+    $query = "SELECT usrid, username, oldname, languages, joindate, art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid='" . $userid . "';";
+    $response = @mysqli_query($connection,$query);
 
 
 
@@ -34,6 +34,7 @@
   $hunter = $row['hunting'];
   $art = $row['art'];
   $webdev = $row['frontwebdev'];
+  $usrname = $row['username'];
   $programming = $row['programming'];
   $se = $row['se'];
   $writing = $row['writing'];
@@ -63,7 +64,7 @@ echo "<img src='logopic.png' alt='default logo'/>";
   echo "<img src='" . $picture . "' alt='profile picture'/>";
 }
  ?> </span> <br />
-<span id="username"> <?php echo $user; ?> </span><br /><br />
+<span id="username"> <?php echo $usrname ?> </span><br /><br />
 <p> ID#: <?php echo $row['usrid']; ?> </p>
  <?php
  $oldname = $row['oldname'];

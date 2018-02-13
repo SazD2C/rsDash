@@ -1,5 +1,5 @@
 <html>
-<?php   $user=$_GET['userid']; ?>
+<?php   $user=$_GET['user']; ?>
 <head>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -25,14 +25,13 @@
   OR die('Could not connect' .
         mysqli_connect_error());
 
-  $query = "SELECT usrid, username, oldname, languages, joindate, art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid='" . $userid . "';";
+  $query = "SELECT usrid, username, oldname, languages, joindate, art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE username='" . $user . "';";
   $response = @mysqli_query($connection,$query);
 
 
 
   $row = @mysqli_fetch_array($response);
   $hunter = $row['hunting'];
-  $usrname = $row['username'];
   $art = $row['art'];
   $webdev = $row['frontwebdev'];
   $programming = $row['programming'];
@@ -57,7 +56,7 @@ echo "<img src='logopic.png' alt='default logo'/>";
   echo "<img src='" . $picture . "' alt='profile picture'/>";
 }
  ?> </span> <br />
-<span id="username"> <?php echo $usrname ?> </span><br /><br />
+<span id="username"> <?php echo $user; ?> </span><br /><br />
 <p> ID#: <?php echo $row['usrid']; ?> </p>
  <?php
  $oldname = $row['oldname'];
@@ -281,8 +280,7 @@ if($smm === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $smm . "</div>";
 }
 
-?>
-</td>
+?> </td>
 </tr>
 </table>
 </span>
