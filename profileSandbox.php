@@ -51,11 +51,17 @@
     background-color: #3c4049;
     height: 100%;
 }
+.height {
+  height:100%;
+}
+.sidebarCenter {
+  text-align: center;
+}
   </style>
 </head>
 <body>
 <div class="row">
-    <div class="col-md-2 side">
+    <div class="col-md-2 side sidebarCenter">
 <span id="profilePicture"> <?php
 $picture = $row['profilePicture'];
 if($picture === NULL) {
@@ -65,13 +71,13 @@ echo "<img src='logopic.png' alt='default logo'/>";
 }
  ?> </span> <br />
 <span id="username"> <?php echo $usrname ?> </span><br /><br />
-<p> ID#: <?php echo $row['usrid']; ?> </p>
+<p class='sidebarCenter'> ID#: <?php echo $row['usrid']; ?> </p>
  <?php
  $oldname = $row['oldname'];
  if($oldname === NULL) {
 
  } else {
- echo "<p> Old Name(s): " . $oldname . "</p>";
+ echo "<p class='sidebarCenter'> Old Name(s): " . $oldname . "</p>";
  }
 
 
@@ -79,7 +85,7 @@ $timezone = $row['timezone'];
 if($timezone === NULL) {
 
 } else {
-echo "<p> Timezone: " . $timezone . "</p>";
+echo "<p class='sidebarCenter'> Timezone: " . $timezone . "</p>";
 }
 
 
@@ -87,14 +93,14 @@ $languages = $row['languages'];
 if($languages === NULL) {
 
 } else {
-echo "<p> Languages: " . $languages . "</p>";
+echo "<p class='sidebarCenter'> Languages: " . $languages . "</p>";
 }
 
 $joindate = $row['joindate'];
 if($joindate === NULL) {
 
 } else {
-echo "<p> Year joined: " . $joindate . "</p>";
+echo "<p class='sidebarCenter'> Year joined: " . $joindate . "</p>";
 }
   ?>
 
@@ -131,7 +137,7 @@ echo "<p> Year joined: " . $joindate . "</p>";
 <p><a href="index.php" style="bottom: 0px; color: white; text-decoration: none;"> Return </a> </p>
 </div>
 
-    <div class="col-md-10">
+    <div class="col-md-10 height">
   <span class="summaryTab">User summary</span>&nbsp;<span class="summaryTab" id="contactInfo">Contact Info</span><br /><br /><br />
 <span class="title" id="addNewAchv"> Most Recent Op Achievements</span> <span id="newAchvLink"> <?php echo "<a id='addNewLink' href='addachievement.php?usrid=" . $userid . "'> Add new</a>"; ?></span>
 <br /> <?php echo "<p class='achvtitle'>" . $achvtitle . "</p>"; echo $achvdescr;?><br /><br /> <?php echo "<a id='seeAll' href='usrallachv.php?usrid=" . $userid . "'>See all</a>"; ?>  <hr />
