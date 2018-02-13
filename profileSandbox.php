@@ -1,7 +1,7 @@
 <html>
 <?php   $user=$_GET['user']; ?>
 <head>
-
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/profile.css">
 
@@ -45,9 +45,16 @@
   $achvtitle = $achvrow['achievementname'];
   $achvdescr = $achvrow['achievementdescr'];
   ?>
+  <style>
+.side {
+    background-color: #3c4049;
+    height: 100%;
+}
+  </style>
 </head>
 <body>
-<div id="profileSidebar">
+<div class="row">
+    <div class="col-md-2 side">
 <span id="profilePicture"> <?php
 $picture = $row['profilePicture'];
 if($picture === NULL) {
@@ -90,14 +97,17 @@ echo "<p> Year joined: " . $joindate . "</p>";
 }
   ?>
 
+
 <br />
-<table style="width:100%">
-  <tr>
-    <td> Availability </td>
-    <td> Reliability </td>
+<div class="row">
+  <div class="col-md-6"> Availability </div>
+  <div class="col-md-6"> Reliability </div>
+</div>
   </tr>
   <tr>
-    <td class="td">   <?php $availability = $row['availability'];
+<div class="row">
+    <div class="col-md-6">
+      <?php $availability = $row['availability'];
       if ($availability >= 4) {
         echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; margin-left: 15%; float: left;'>" . $availability . "</div>";
       } elseif ($availability < 4 && $availability > 2) {
@@ -105,8 +115,9 @@ echo "<p> Year joined: " . $joindate . "</p>";
       } else {
         echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E; margin-left: 15%;'>" . $availability . "</div>";
       }
-      ?> </td>
-    <td class="td"> <?php $reliability = $row['reliability'];
+      ?>
+    </div>
+    <div class="col-md-6"> <?php $reliability = $row['reliability'];
     if ($reliability >= 4) {
       echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; margin-left: 10%;'>" . $reliability . "</div>";
     } elseif ($reliability < 4 && $reliability > 2) {
@@ -114,14 +125,12 @@ echo "<p> Year joined: " . $joindate . "</p>";
     } else {
       echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E; margin-left: 10%;'>" . $reliability . "</div>";
     }
-     ?> </td>
-
-  </tr>
-</table>
+     ?> </div>
+</div>
 <p><a href="index.php" style="bottom: 0px; color: white; text-decoration: none;"> Return </a> </p>
 </div>
 
-<div id="profileBody">
+    <div class="col-md-10">
   <span class="summaryTab">User summary</span>&nbsp;<span class="summaryTab" id="contactInfo">Contact Info</span><br /><br /><br />
 <span class="title" id="addNewAchv"> Most Recent Op Achievements</span> <span id="newAchvLink"> <?php echo "<a id='addNewLink' href='addachievement.php?usrid=" . $userid . "'> Add new</a>"; ?></span>
 <br /> <?php echo "<p class='achvtitle'>" . $achvtitle . "</p>"; echo $achvdescr;?><br /><br /> <?php echo "<a id='seeAll' href='usrallachv.php?usrid=" . $userid . "'>See all</a>"; ?>  <hr />
@@ -129,8 +138,8 @@ echo "<p> Year joined: " . $joindate . "</p>";
   <br /><br /><br /><br />
   <span id="eskills">Enumerated skills: </span>
   <span id="skillwrapper">
-  <table style="width:100%;">
-    <tr>
+    <div class="row">
+      <div class="col-md-2">
       <td> <?php
       if($hunter === NULL) {
 
@@ -138,55 +147,59 @@ echo "<p> Year joined: " . $joindate . "</p>";
         echo "Hunting";
       }
       ?>
-         </td>
-      <td> <?php
+    </div>
+    <div class="col-md-2">
+       <?php
       if($webdev === NULL) {
 
       } else {
         echo "Web Dev";
       }
-      ?> </td>
-      <td> <?php
+      ?>
+    </div>
+    <div class="col-md-2">
+       <?php
       if($programming === NULL) {
 
       } else {
         echo "Programming";
       }
-      ?> </td>
-      <td> <?php
+      ?>
+    </div>
+    <div class="col-md-2"> <?php
       if($se === NULL) {
 
       } else {
         echo "Social Engineering";
       }
-      ?> </td>
-      <td> <?php
+      ?>     </div>
+          <div class="col-md-2"> <?php
       if($art === NULL) {
 
       } else {
         echo "Art";
       }
-      ?> </td>
-      <td> <?php
+      ?>    </div>
+          <div class="col-md-2"> <?php
       if($writing === NULL) {
 
       } else {
         echo "Writing";
       }
-      ?> </td>
-      <td> <?php
+      ?>     </div>
+          <div class="col-md-2"><?php
       if($smm === NULL) {
 
       } else {
         echo "Social Media Management";
       }
-      ?> </td>
-    </tr>
-    <tr>
-      <td>
+      ?>    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+
   <?php
   if($hunter === NULL) {
-
 
   } elseif ($hunter >= 4) {
       echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #38B44C; '>" . $hunter . "</div>";
@@ -196,8 +209,8 @@ echo "<p> Year joined: " . $joindate . "</p>";
       echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E; '>" . $hunter . "</div>";
     }
 
-  ?> </td>
-  <td>
+  ?> </div>
+  <div class="col-md-2">
 <?php
 if($webdev === NULL) {
 
@@ -210,8 +223,8 @@ if($webdev === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $webdev . "</div>";
 }
 
-?> </td>
-<td>
+?> </div>
+<div class="col-md-2">
 <?php
 if($webdev === NULL) {
 
@@ -224,8 +237,8 @@ if($webdev === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $programming . "</div>";
 }
 
-?> </td>
-<td>
+?> </div>
+<div class="col-md-2">
 <?php
 if($se === NULL) {
 
@@ -238,8 +251,8 @@ if($se === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $se . "</div>";
 }
 
-?> </td>
-<td>
+?> </div>
+<div class="col-md-2">
 <?php
 if($art === NULL) {
 
@@ -252,8 +265,8 @@ if($art === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $art . "</div>";
 }
 
-?> </td>
-<td>
+?> </div>
+<div class="col-md-2">
 <?php
 if($writing === NULL) {
 
@@ -266,8 +279,8 @@ if($writing === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $writing . "</div>";
 }
 
-?> </td>
-<td>
+?> </div>
+<div class="col-md-2">
 <?php
 if($smm === NULL) {
 
@@ -280,11 +293,12 @@ if($smm === NULL) {
   echo "<div style='text-align: center; border-radius:50%; padding: 10px; width: 20px; background-color: #D7432E;'>" . $smm . "</div>";
 }
 
-?> </td>
-</tr>
-</table>
+?> </div>
+</div>
+
 </span>
 </span>
 </span>
+</div>
 </body>
 </html>
