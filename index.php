@@ -2,6 +2,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/search.css"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 <title>
   RS search
 </title>
@@ -39,6 +40,8 @@ function load() {
     <input type="text" name="search" id="bug">
     <input type="submit" name="submit" value="search" id="rat">
   </form>
+
+
   <?php
   require_once('php/phpsearchcode.php');
   ?>
