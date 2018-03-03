@@ -91,6 +91,8 @@ echo "<p> Year joined: " . $joindate . "</p>";
   ?>
 
 <br />
+<button onclick="alertCookie()">Show cookies</button>
+
 <table style="width:100%">
   <tr>
     <td> Availability </td>

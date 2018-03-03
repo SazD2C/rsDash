@@ -29,7 +29,7 @@ function load() {
     <li><a href="usrlister.php">User list generator</a></li>
     <li><a href="adduser.php">Add new user</a></li>
     <li ><a href="#" onclick="load(); return false;">Settings</a></li>
-    <li><a href="">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li style="float:right"><a href="mailto:saz@cerberusbyte.com">Contact</a></li>
   </ul>
 

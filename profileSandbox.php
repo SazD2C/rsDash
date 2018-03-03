@@ -3,6 +3,7 @@
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/profile.css">
 
   <title>
@@ -17,6 +18,21 @@
       $('.hideSumm').css({
           'display': 'none'
       });
+  });
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+
+      type: 'radar',
+
+      data: {
+          labels: ['Art', 'Hunting', 'Web Dev', 'Writing', 'Programming', 'Social Engineering', 'Social Media Management'],
+          datasets: [{
+              label: 'Total skill',
+              backgroundColor: 'rgb(92,184,92)',
+              borderColor: 'rgb(92, 165, 92)',
+              data: [3, 3, 3, 4, 3, 7, 1],
+          }]
+      },
   });
   </script>
   <?php

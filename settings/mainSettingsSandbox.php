@@ -26,14 +26,30 @@ html, body {
 OR die('Could not connect' .
       mysqli_connect_error());
 /* Add sum */
-$query = "SELECT max(usrid), sum(art), sum(hunting), sum(frontwebdev), sum(writing), sum(programming), sum(se), sum(smm), sum(pentesting), sum(availability), sum(reliability) FROM userinfo ";
+$query = "SELECT max(usrid), sum(age), sum(art), sum(hunting), sum(frontwebdev), sum(writing), sum(programming), sum(se), sum(smm), sum(pentesting), sum(availability), sum(reliability) FROM userinfo ";
 $response = @mysqli_query($connection,$query);
+$row = @mysqli_fetch_array($response);
 
 $achvquery = "SELECT COUNT(achieveid) FROM achievements WHERE MONTH(timestamps) = MONTH(CURRENT_DATE())";
 $achvresponse = @mysqli_query($connection,$achvquery);
 $achv = @mysqli_fetch_array($achvresponse);
-$row = @mysqli_fetch_array($response);
 
+$techQuery = "SELECT COUNT(usrid) FROM userinfo WHERE frontwebdev >= 1 OR programming >= 1";
+$techRes = @mysqli_query($connection,$techQuery);
+$tech = @mysqli_fetch_array($techRes);
+
+$huntQuery = "SELECT COUNT(usrid) FROM userinfo WHERE hunting >= 1";
+$huntRes = @mysqli_query($connection,$huntQuery);
+$hunting = @mysqli_fetch_array($huntRes);
+
+$nAge = "SELECT max(usrid) FROM userinfo WHERE age != NULL";
+$nRes = @mysqli_query($connection,$nAge);
+$nnAge = @mysqli_fetch_array($nRes); #Why does it return as 0
+
+$usrmax = $row['max(usrid)'] - 1501;
+$neAge = $nnAge['max(usrid)'];
+$age = $row['sum(age)'];
+$avgAge = $age / $neAge;
 $artsum = $row['sum(art)'];
 $huntingsum = $row['sum(hunting)'];
 $websum = $row['sum(frontwebdev)'];
@@ -45,8 +61,8 @@ $smmsum = $row['sum(smm)'];
 $pensum = $row['sum(pentesting)'];
 $avsum = $row['sum(availability)'];
 $relsum = $row['sum(reliability)'];
-$usrmax = $row['max(usrid)'] - 1500;
-$totalsum = $artsum + $huntingsum + $websum + $writsum + $progsum + $sesum + $pensum + $smmsum;
+#$totalsum = $artsum + $huntingsum + $websum + $writsum + $progsum + $sesum + $pensum + $smmsum;
+
 /* Percentages
 $artsump = number_format(($artsum / $totalsum) * 100, 1);
 $websump = number_format(($websum / $totalsum) * 100, 1);
@@ -66,8 +82,8 @@ echo "<div style='display:inline;'><span style='width:" . $artsump . "%; backgro
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<div class="row left"><div class="col-md-1 center"><br /><p class="bg-info wrap"><?php echo $usrmax; ?> members</p></div> <div class="col-md-4">
-<div id="bar"> <canvas id="myChart"></canvas></div></div><div class="col-md-1 center"><br /><p class="bg-info wrap"><?php echo $achvnum; ?> op assignment completed this month</p></div></div>
+<div class="row left"><div class="col-md-1 center"><br /><p class="bg-info wrap"><?php echo $usrmax; ?> members</p> <p class="bg-info wrap"><?php echo $tech['COUNT(usrid)']; ?> users with tech proficiency</p><p class="bg-info wrap">Average age: <?php echo round($avgAge) ?> </p></div> <div class="col-md-4">
+<div id="bar"> <canvas id="myChart"></canvas></div></div><div class="col-md-1 center"><br /><p class="bg-info wrap"><?php echo $achvnum; ?> op tasks completed this month</p> <p class="bg-info wrap"><?php echo $hunting['COUNT(usrid)']; ?> users with hunting proficiency</p></div></div>
 <?php echo "<script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
