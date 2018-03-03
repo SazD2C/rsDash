@@ -3,20 +3,20 @@ Current version: Version 0.0.1
 
 
 Main functioning features:
- - Settings page dashboard*
+ - Settings page dashboard**
  - Profile lookup
  - Adding a new 'achievement' (soon to be renamed 'Completed task')
 
 Under development:
- - * Settings page dashboard
+ - ** Settings page dashboard
  More data will be added and customized.
  - Theme switching.
- - Profile page upgrade**
+ - Profile page upgrade***
 
 Current bugs:
  - Adding a new user through the webpage does not send data to database.
  - Userlist generator is broken. (may be scrapped)
- - ** Misalignment on profile pages (being recoded from scratch)
+ - *** Misalignment on profile pages (being recoded from scratch)
  - Theme cookies wont delete
  - Average age is not counted due to correct data not being retrieved from database.
 
