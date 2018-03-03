@@ -24,7 +24,7 @@ function loadSkill() {
   <li><a href="#main">Main - <span class="light">  Usercount, stats and other information </span></a></li>
   <li><a href="#" onclick="loadSkill(); return false;">Skills - <span class="light"> Add or remove more user skills </span></a></li>
   <li><a href="settings/settings.php">Settings - <span class="light"> rsChat settings </span></a></li>
-  <li><a href="#">About - <span class="light"> About rsDash </span></a></li>
+  <li><a href="about.html">About - <span class="light"> About rsDash </span></a></li>
   <br />
   <li><a href="" onclick="return(); return false;">Exit</a></li>
 </ul>
