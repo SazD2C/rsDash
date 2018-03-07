@@ -1,14 +1,21 @@
 <!DOCTYPE HTML>
 <head>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/search.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="css/search.css"/> -->
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
 <title>
   RS search
 </title>
 </head>
 <body>
+  <span id="colour"> </span>
+<script>
+if (document.cookie.indexOf("theme[light]=") != -1) {
+    document.getElementById('colour').innerHTML = '<link rel="stylesheet" type="text/css" href="css/light/search.css"/>';
+} else if (document.cookie.indexOf("theme[light]=") == -1) {
+  document.getElementById('colour').innerHTML = '<link rel="stylesheet" type="text/css" href="css/search.css"/>';
+}
+</script>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -49,8 +56,5 @@ function load() {
 </div>
   <div class="col-md-4"></div>
 </div>
-
-
-
 </body>
 </html>

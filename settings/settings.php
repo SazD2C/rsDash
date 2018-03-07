@@ -57,13 +57,15 @@ body {
 	height: 100vh;
 }
 </style>
-<script>
+
+<script type="text/javascript">
 function alertCookie() {
-  if (document.cookie.split(';').indexOf('lightTheme=') > 0) {
-    document.cookie = "lightTheme=0; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  }
-  else {
-    document.cookie = "name=lightTheme; lightTheme=1;";
+if (document.cookie.indexOf("theme[light]=") >= 0) {
+      alert("Dark"); // remove once fully tested, see note below
+      document.cookie = "theme[light]" + "=" + "" + ";" +" expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/;";
+  } else {
+      document.cookie = "theme[light]=1; path=/;";
+      alert("Light"); // remove once fully tested, see note below
   }
 }
 </script>
@@ -81,6 +83,7 @@ function alertCookie() {
   <span class="settingsItemTitle">
     Light Theme
   </span>
+<!-- Change this so it uses cookie existance to determine if active -->
 <input type="checkbox" id="switch" /><label for="switch"  onclick="alertCookie();">Toggle</label>
 </div>
 </div>
