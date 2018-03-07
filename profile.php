@@ -12,13 +12,16 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <script>
+<script>
   $('#contactInfo').click(function() {
       $('.hideSumm').css({
           'display': 'none'
       });
   });
-  </script>
+function contact() {
+    $("#profileBody").load("settings.php");
+}
+</script>
   <?php
 
   $connection = @mysqli_connect("localhost","root","","RS")
@@ -48,6 +51,9 @@
   <script>
   function load() {
       $("#paste").load("settings.php");
+  }
+  function contact() {
+      $("#profileBody").load("contactInfo.php");
   }
   </script>
 </head>
@@ -138,7 +144,7 @@ echo "<p> Year joined: " . $joindate . "</p>";
 </div>
 
 <div id="profileBody">
-  <span class="summaryTab">User summary</span>&nbsp;<span class="summaryTab" id="contactInfo">Contact Info</span><br /><br /><br />
+  <span class="summaryTab">User summary</span>&nbsp;<span class="summaryTab" id="contactInfo" onclick="contact();">Contact Info</span><br /><br /><br />
 <span class="title" id="addNewAchv"> Most recent completed task</span> <span id="newAchvLink"> <?php echo "<a id='addNewLink' href='addachievement.php?usrid=" . $userid . "'> Add new</a>"; ?></span>
 <br /> <?php echo "<p class='achvtitle'>" . $achvtitle . "</p>"; echo $achvdescr;?><br /><br /> <?php echo "<a id='seeAll' href='usrallachv.php?usrid=" . $userid . "'>See all</a>"; ?>  <hr />
 

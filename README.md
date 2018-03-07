@@ -16,6 +16,7 @@ Under development:
 Current bugs:
  - Adding a new user through the webpage does not send data to database.
  - Userlist generator is broken. (may be scrapped)
+ - Most recent completed task does nothing
  - *** Misalignment on profile pages (being recoded from scratch)
  - Average age is not counted due to correct data not being retrieved from database.
 

@@ -8,7 +8,7 @@
 </title>
 </head>
 <body>
-  <span id="colour"> </span>
+  <span id="colour"><link rel="stylesheet" type="text/css" href="css/search.css"/></span>
 <script>
 if (document.cookie.indexOf("theme[light]=") != -1) {
     document.getElementById('colour').innerHTML = '<link rel="stylesheet" type="text/css" href="css/light/search.css"/>';
