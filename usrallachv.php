@@ -35,7 +35,7 @@ All Achievements
   OR die('Could not connect' .
         mysqli_connect_error());
 /* Change this so the results are from most to least recent */
-  $query = "SELECT achieveid, achievementname, achievementdescr, date(timestamps) FROM achievements WHERE usrid=" . $usrid . ";";
+  $query = "SELECT achieveid, achievementname, achievementdescr, date(timestamps) FROM achievements WHERE usrid=" . $usrid . " AND complete=TRUE;";
   $response = @mysqli_query($connection,$query);
 
   if($response){

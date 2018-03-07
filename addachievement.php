@@ -6,6 +6,10 @@
     Add achievement
   </title>
   <link rel="stylesheet" type="text/css" href="css/addachv.css"/>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <?php
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
@@ -30,9 +34,14 @@
   mysqli_close($connection);
   ?>
 </head>
+<script>
+  function load() {
+      $("#paste").load("settings.php");
+  }
+</script>
 <body>
   <ul id="nav">
-    <li><a href="">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li><a href="">Achievements</a></li>
     <li><a href="usrlister.php">User list generator</a></li>
     <li><a href="adduser.php">Add new user</a></li>
@@ -40,7 +49,7 @@
     <li><a href="about.html">About</a></li>
     <li style="float:right"><a href="mailto:saz@cerberusbyte.com">Contact</a></li>
   </ul>
-
+<span id="paste"></span>
   <br /><br /><br />
 <p class="title"> Add Completed Task</p>
 <div class="row">
