@@ -2,6 +2,15 @@
 
 <!DOCTYPE HTML>
 <head>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+  function load() {
+      $("#paste").load("settings.php");
+  }
+  </script>
   <!-- List all achievements of specific user -->
 <?php  $usrid = $_GET['usrid'];?>
 <style>
@@ -21,13 +30,48 @@ html, body {
   color:white;
   margin-left: 10px;
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none !important;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+    text-decoration: none !important;
+}
 </style>
+<span id="paste"></span>
+<ul id="nav">
+  <li><a href="/">Home</a></li>
+  <li><a href="">Achievements</a></li>
+  <li><a href="usrlister.php">User list generator</a></li>
+  <li><a href="adduser.php">Add new user</a></li>
+  <li ><a href="#" onclick="load(); return false;">Settings</a></li>
+  <li><a href="about.html">About</a></li>
+  <li style="float:right"><a href="mailto:saz@cerberusbyte.com">Contact</a></li>
+</ul>
 <title>
 All Achievements
 </title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+<br />
 <h2 class="Sectitle"> All achievements </h2>
   <?php
 
