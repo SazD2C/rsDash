@@ -1,7 +1,6 @@
-<!-- Try Using code from userlister.php here to see if it works -->
-
 <!DOCTYPE HTML>
 <head>
+<link rel="stylesheet" type="text/css" href="css/usrallachv.css">
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -13,48 +12,7 @@
   </script>
   <!-- List all achievements of specific user -->
 <?php  $usrid = $_GET['usrid'];?>
-<style>
-html, body {
-  margin:0px;
-  color: white;
-  background-color: #282C35 !important;
-}
-.achvwrap {
-  background-color: #36393E;
-  padding: 30px;
-}
-.title {
-  font-size: 20px;
-}
-.Sectitle {
-  color:white;
-  margin-left: 10px;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none !important;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-    text-decoration: none !important;
-}
-</style>
 <span id="paste"></span>
 <ul id="nav">
   <li><a href="/">Home</a></li>
