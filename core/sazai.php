@@ -16,17 +16,19 @@ $skillList = array();
 
 function findUserThisMonth() {
 
-# We need to find if a task has been given to a user this month already
+# I need to find if a task has been given to a user this month already
 $currentMonthTask = "SELECT stamp, taskRqSkillsFk FROM taskRqSkillsFk WHERE MONTH(stamp) = MONTH(CURRENT_DATE());";
 $currentMonthTaskRes = @mysqli_query($connection,$currentMonthTask);
+$achvKey = $cmtr['taskRqSkillsFk'];
 
-if($currentMonthTaskRes){
-  while ($cmtr = @mysqli_fetch_array($currentMonthTaskRes)) {
-    $achvKey = $cmtr['taskRqSkillsFk'];
-
-    $findUserID = "SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . "';";
-    $FUIDRes = @mysqli_query($connection,$findUser);
-    $FUID = @mysqli_fetch_array($FUIDRes);
+$findUserID = "SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE());";
+$FUIDRes = @mysqli_query($connection,$findUser);
+$FUID = @mysqli_fetch_array($FUIDRes);
+  if $usrid > 1500 && $usrid < 3000 {
+    return TRUE;
+  } else {
+    return FALSE;
+  }
 }
 
 $mTotal = 0;
@@ -103,7 +105,10 @@ if($response){
 
       if $mTotal < $total {
         $mTotal = $total;
-        $id = $onebyone;
+        findUserThisMonth()
+        if findUserThisMonth() == FALSE {
+          $id = $onebyone;
+        }
       }
     }
   }
