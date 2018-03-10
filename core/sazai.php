@@ -15,15 +15,14 @@ $Urow = mysqli_fetch_array($Uresponse);
 $skillList = array();
 
 function findUserThisMonth() {
+  # I need to find if a task has been given to a user this month already
+  $currentMonthTask = "SELECT stamp, taskRqSkillsFk FROM taskRqSkillsFk WHERE MONTH(stamp) = MONTH(CURRENT_DATE());";
+  $currentMonthTaskRes = @mysqli_query($connection,$currentMonthTask);
+  $achvKey = $cmtr['taskRqSkillsFk'];
 
-# I need to find if a task has been given to a user this month already
-$currentMonthTask = "SELECT stamp, taskRqSkillsFk FROM taskRqSkillsFk WHERE MONTH(stamp) = MONTH(CURRENT_DATE());";
-$currentMonthTaskRes = @mysqli_query($connection,$currentMonthTask);
-$achvKey = $cmtr['taskRqSkillsFk'];
-
-$findUserID = "SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE());";
-$FUIDRes = @mysqli_query($connection,$findUser);
-$FUID = @mysqli_fetch_array($FUIDRes);
+  $findUserID = "SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE());";
+  $FUIDRes = @mysqli_query($connection,$findUser);
+  $FUID = @mysqli_fetch_array($FUIDRes);
   if $usrid > 1500 && $usrid < 3000 {
     return TRUE;
   } else {
@@ -102,11 +101,11 @@ if($response){
       if ($smm == TRUE) {
         $total += $Urow['smm'];
       }
-
-      if $mTotal < $total {
-        $mTotal = $total;
-        findUserThisMonth()
-        if findUserThisMonth() == FALSE {
+      
+      findUserThisMonth()
+      if findUserThisMonth() == FALSE {
+        if $mTotal < $total {
+          $mTotal = $total;
           $id = $onebyone;
         }
       }
