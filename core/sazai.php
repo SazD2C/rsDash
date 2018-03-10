@@ -5,7 +5,7 @@ OR die('Could not connect' .
 
 $query = "SELECT achieveid, achievementname, achievementdescr, usrid, timestamps FROM achievements WHERE complete='FALSE';";
 $Rquery = "SELECT stamp, se, smm, pentesting, art, programming, writing, frontwebdev, hunting FROM taskRqSkillsFk WHERE taskRqSkillsFk==achieveid;";
-$Uquery = "SELECT usrid, art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid = '". $onebyone ."';";
+$Uquery = "SELECT usrid, dscAcc art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid = '". $onebyone ."';";
 $response = @mysqli_query($connection,$query);
 $Rresponse = @mysqli_query($connection,$Rquery);
 $Uresponse = @mysqli_query($connection,$Uquery);
@@ -101,7 +101,7 @@ if($response){
       if ($smm == TRUE) {
         $total += $Urow['smm'];
       }
-      
+
       findUserThisMonth()
       if findUserThisMonth() == FALSE {
         if $mTotal < $total {
@@ -110,6 +110,8 @@ if($response){
         }
       }
     }
+  $onebyone = $id;
+  $uzanto = "<script> var uzanto = '" . $dscAcc . "' </script>";
   }
 }
 
