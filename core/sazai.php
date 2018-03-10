@@ -4,7 +4,7 @@ OR die('Could not connect' .
       mysqli_connect_error());
 
 $query = "SELECT achieveid, achievementname, achievementdescr, usrid, timestamps FROM achievements WHERE complete='FALSE';";
-$Rquery = "SELECT se, smm, pentesting, art, programming, writing, frontwebdev, hunting FROM taskRqSkillsFk WHERE taskRqSkillsFk==achieveid;";
+$Rquery = "SELECT stamp, se, smm, pentesting, art, programming, writing, frontwebdev, hunting FROM taskRqSkillsFk WHERE taskRqSkillsFk==achieveid;";
 $Uquery = "SELECT usrid, art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid = '". $onebyone ."';";
 $response = @mysqli_query($connection,$query);
 $Rresponse = @mysqli_query($connection,$Rquery);
@@ -14,11 +14,25 @@ $Rrow = mysqli_fetch_array($Rresponse);
 $Urow = mysqli_fetch_array($Uresponse);
 $skillList = array();
 
+function findUserThisMonth() {
+
+# We need to find if a task has been given to a user this month already
+$currentMonthTask = "SELECT stamp, taskRqSkillsFk FROM taskRqSkillsFk WHERE MONTH(stamp) = MONTH(CURRENT_DATE());";
+$currentMonthTaskRes = @mysqli_query($connection,$currentMonthTask);
+
+if($currentMonthTaskRes){
+  while ($cmtr = @mysqli_fetch_array($currentMonthTaskRes)) {
+    $achvKey = $cmtr['taskRqSkillsFk'];
+
+    $findUserID = "SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . "';";
+    $FUIDRes = @mysqli_query($connection,$findUser);
+    $FUID = @mysqli_fetch_array($FUIDRes);
+}
 
 $mTotal = 0;
 $total = 0;
 if($response){
-  while ($row = mysqli_fetch_array($response); && $Rrow = mysqli_fetch_array($Rresponse);) {
+  while ($row = mysqli_fetch_array($response) && $Rrow = mysqli_fetch_array($Rresponse)) {
     if $Rrow['se']; == TRUE {
       #$se = $Rrow['se'];
       $ss = TRUE;
@@ -59,6 +73,7 @@ if($response){
       $h = TRUE;
       array_push($skillList, "hunting");
     }
+
     for ($x = 0; $x > count($skillList); $x++) {
       $onebyone += 1500 + $x;
       if ($h == TRUE) {
