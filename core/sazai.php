@@ -4,21 +4,24 @@ OR die('Could not connect' .
       mysqli_connect_error());
 $onebyone = 0;
 $query = "SELECT achieveid, achievementname, achievementdescr, usrid, timestamps FROM achievements WHERE complete='FALSE';";
-$Rquery = "SELECT stamp, se, smm, pentesting, art, programming, writing, frontwebdev, hunting FROM taskRqSkillsFk WHERE taskRqSkillsFk==achieveid;";
+$Rquery = "SELECT stamp, se, smm, pentesting, art, programming, writing, frontwebdev, hunting FROM taskRqSkillsFk WHERE taskRqSkillsFkC=achieveid;";
 $Uquery = "SELECT usrid, dscAcc art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid = '". $onebyone ."';";
+$Fquery = "SELECT achieveid, achievementname, achievementdescr, usrid, timestamps FROM achievements WHERE usrid = " . $onebyone . ";";
 $response = @mysqli_query($connection,$query);
 $Rresponse = @mysqli_query($connection,$Rquery);
 $Uresponse = @mysqli_query($connection,$Uquery);
+$Fresponse = @mysqli_query($connection,$Fquery);
 $row = mysqli_fetch_array($response);
 $Rrow = mysqli_fetch_array($Rresponse); # Boolean error
 $Urow = mysqli_fetch_array($Uresponse);
+$Frow = mysqli_fetch_array($Fresponse);
 $skillList = array();
 
 function findUserThisMonth() {
   # I need to find if a task has been given to a user this month already
   $currentMonthTask = "SELECT stamp, taskRqSkillsFk FROM taskRqSkillsFk WHERE MONTH(stamp) = MONTH(CURRENT_DATE());";
   $currentMonthTaskRes = @mysqli_query($connection,$currentMonthTask);
-  $achvKey = $cmtr['taskRqSkillsFk'];
+  $achvKey = $cmtr['taskRqSkillsFkC'];
 
   $findUserID = "SELECT ISNULL(SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE()));";
   $FUIDRes = @mysqli_query($connection,$findUser);
@@ -111,7 +114,13 @@ if($response){
       }
     }
   $onebyone = $id;
-  $uzanto = "var uzanto = '" . $dscAcc . "';";
+  echo "<?xml version="1.0" encoding="UTF-8"?>
+<task>
+  <to>" . $dscAcc . "</to>
+  <heading>" . $Frow['achievementname']; . "</heading>
+  <body>" . $Frow['achievementdescr']; . "</body>
+</task>
+ ";
   # Get this to the bot somehow.
   $mTotal = 0;
   $total = 0;
