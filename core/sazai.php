@@ -10,7 +10,7 @@ $response = @mysqli_query($connection,$query);
 $Rresponse = @mysqli_query($connection,$Rquery);
 $Uresponse = @mysqli_query($connection,$Uquery);
 $row = mysqli_fetch_array($response);
-$Rrow = mysqli_fetch_array($Rresponse);
+$Rrow = mysqli_fetch_array($Rresponse); # Boolean error
 $Urow = mysqli_fetch_array($Uresponse);
 $skillList = array();
 
@@ -112,7 +112,10 @@ if($response){
     }
   $onebyone = $id;
   $uzanto = "var uzanto = '" . $dscAcc . "';";
-  # Get this to the bot somehow
+  # Get this to the bot somehow.
+  $mTotal = 0;
+  $total = 0;
+  # Clear those variables before moving on to the next sequence in while loop.
   }
 }
 
