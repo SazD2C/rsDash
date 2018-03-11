@@ -2,7 +2,7 @@
 $connection = @mysqli_connect("localhost","root","","RS")
 OR die('Could not connect' .
       mysqli_connect_error());
-
+$onebyone = 0;
 $query = "SELECT achieveid, achievementname, achievementdescr, usrid, timestamps FROM achievements WHERE complete='FALSE';";
 $Rquery = "SELECT stamp, se, smm, pentesting, art, programming, writing, frontwebdev, hunting FROM taskRqSkillsFk WHERE taskRqSkillsFk==achieveid;";
 $Uquery = "SELECT usrid, dscAcc art, hunting, frontwebdev, backwebdev, writing, programming, se, smm, pentesting, timezone, availability, reliability, profilePicture FROM userinfo WHERE usrid = '". $onebyone ."';";
@@ -23,7 +23,7 @@ function findUserThisMonth() {
   $findUserID = "SELECT ISNULL(SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE()));";
   $FUIDRes = @mysqli_query($connection,$findUser);
   $FUID = @mysqli_fetch_array($FUIDRes);
-  if $FUID ==  1 {
+  if ($FUID ==  1) {
     return TRUE;
   } else {
     return FALSE;
@@ -34,42 +34,42 @@ $mTotal = 0;
 $total = 0;
 if($response){
   while ($row = mysqli_fetch_array($response) && $Rrow = mysqli_fetch_array($Rresponse)) {
-    if $Rrow['se']; == TRUE {
+    if ($Rrow['se'] == TRUE) {
       #$se = $Rrow['se'];
       $ss = TRUE;
       array_push($skillList, "se");
     }
-    if $Rrow['smm']; == TRUE {
+    if ($Rrow['smm'] == TRUE) {
       #$smm = $Rrow['smm'];
       $s = TRUE;
       array_push($skillList, "smm");
     }
-    if $Rrow['pentesting']; == TRUE {
+    if ($Rrow['pentesting'] == TRUE) {
       #$pentesting = $Rrow['pentesting'];
       $pe = TRUE;
       array_push($skillList, "pentesting");
     }
-    if $Rrow['art']; == TRUE {
+    if ($Rrow['art'] == TRUE) {
       #$pentesting = $Rrow['art'];
       $a = TRUE;
       array_push($skillList, "art");
     }
-    if $Rrow['programming']; == TRUE {
+    if ($Rrow['programming'] == TRUE) {
       #$programming = $Rrow['programming'];
       $p = TRUE;
       array_push($skillList, "programming");
     }
-    if $Rrow['writing']; == TRUE {
+    if ($Rrow['writing'] == TRUE) {
       #$writing = $Rrow['writing'];
       $w = TRUE;
       array_push($skillList, "writing");
     }
-    if $Rrow['frontwebdev']; == TRUE {
+    if ($Rrow['frontwebdev'] == TRUE) {
       #$frontwebdev = $Rrow['frontwebdev'];
       $f = TRUE;
       array_push($skillList, "frontwebdev");
     }
-    if $Rrow['hunting']; == TRUE {
+    if ($Rrow['hunting'] == TRUE) {
       #$hunting = $Rrow['hunting'];
       $h = TRUE;
       array_push($skillList, "hunting");
@@ -102,9 +102,9 @@ if($response){
         $total += $Urow['smm'];
       }
 
-      findUserThisMonth()
-      if findUserThisMonth() == FALSE {
-        if $mTotal < $total {
+      findUserThisMonth();
+      if (findUserThisMonth() == FALSE) {
+        if ($mTotal < $total) {
           $mTotal = $total;
           $id = $onebyone;
         }
