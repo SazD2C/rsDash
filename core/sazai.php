@@ -20,10 +20,10 @@ function findUserThisMonth() {
   $currentMonthTaskRes = @mysqli_query($connection,$currentMonthTask);
   $achvKey = $cmtr['taskRqSkillsFk'];
 
-  $findUserID = "SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE());";
+  $findUserID = "SELECT ISNULL(SELECT achieveid, usrid FROM achievements WHERE achieveid = '" . $achvKey . " AND MONTH(timestamps) = MONTH(CURRENT_DATE()));";
   $FUIDRes = @mysqli_query($connection,$findUser);
   $FUID = @mysqli_fetch_array($FUIDRes);
-  if $usrid > 1500 && $usrid < 3000 {
+  if $FUID ==  1 {
     return TRUE;
   } else {
     return FALSE;
@@ -111,7 +111,8 @@ if($response){
       }
     }
   $onebyone = $id;
-  $uzanto = "<script> var uzanto = '" . $dscAcc . "' </script>";
+  $uzanto = "var uzanto = '" . $dscAcc . "';";
+  # Get this to the bot somehow
   }
 }
 
